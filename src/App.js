@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
@@ -15,11 +15,17 @@ function App() {
         console.error(error);
       });
   };
-  fetchAdvice();
+  // fetchAdvice();
+  // useEffect(() => {
+  //   fetchAdvice();
+  // }, [advice]);
   return (
-    <div className="App">
-      <div>
-        <h1>{advice}</h1>
+    <div className="app">
+      <div className="card">
+        <h1 className="heading">{advice}</h1>
+        <button className="btn" onClick={fetchAdvice}>
+          Give me advice
+        </button>
       </div>
     </div>
   );
